@@ -512,10 +512,24 @@ def start_native_polling():
                             sender = msg.get("from", {}).get("first_name", "Bạn")
 
                             # 1. Photo Message (Album / Single / Multi-photo)
-                            if "photo" in msg:
-                                photos = msg["photo"]
-                                largest_photo = photos[-1]
-                                file_id = largest_photo["file_id"]
+                            # 1. Photo Message or Document Image
+                            is_photo_msg = "photo" in msg
+                            is_doc_image = False
+                            doc_obj = msg.get("document")
+                            if doc_obj:
+                                mime = doc_obj.get("mime_type", "").lower()
+                                fname = doc_obj.get("file_name", "").lower()
+                                if mime.startswith("image/") or fname.endswith((".png", ".jpg", ".jpeg", ".webp")):
+                                    is_doc_image = True
+
+                            if is_photo_msg or is_doc_image:
+                                if is_photo_msg:
+                                    photos = msg["photo"]
+                                    largest_photo = photos[-1]
+                                    file_id = largest_photo["file_id"]
+                                else:
+                                    file_id = doc_obj["file_id"]
+
                                 caption = msg.get("caption", "").strip()
                                 # Single User-level group key for seamless batching
                                 group_key = f"user_{chat_id}"
@@ -557,8 +571,8 @@ def start_native_polling():
                                         timer.start()
 
                             # 2. Video Message (Sample video learning)
-                            elif "video" in msg or "document" in msg:
-                                v = msg.get("video") or msg.get("document")
+                            elif "video" in msg or (doc_obj and not is_doc_image):
+                                v = msg.get("video") or doc_obj
                                 file_id = v["file_id"]
                                 file_name = v.get("file_name", f"sample_{int(time.time())}.mp4")
                                 caption = msg.get("caption", "")

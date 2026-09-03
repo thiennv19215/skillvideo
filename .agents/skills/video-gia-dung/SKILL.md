@@ -48,17 +48,20 @@ Mọi prompt ảnh phải chứa nguyên văn:
 
 Và:
 
-`accurate realistic product proportions, perfectly scaled to human body, natural realistic size, not oversized, compact real-world handheld dimensions, raw authentic real-life commercial photography, realistic natural human skin texture with subtle pores, authentic optical depth of field, real studio and factory lighting, shot on 35mm DSLR lens, photorealistic, no 3D render, no CGI, no anime, no illustration, no plastic airbrushed skin.`
+`accurate realistic product proportions, perfectly scaled to human body, natural realistic size, not oversized, compact real-world handheld dimensions, perfect anatomical hands and fingers, exactly five natural fingers per hand, natural limbs, no deformed hands, no extra fingers, no missing fingers, no fused fingers, raw authentic real-life commercial photography, realistic natural human skin texture with subtle pores, authentic optical depth of field, real studio and factory lighting, shot on 35mm DSLR lens, photorealistic, no 3D render, no CGI, no anime, no illustration, no plastic airbrushed skin.`
 
 Dùng Medium 3/4 Shot, khoảng cách máy ảnh tương đương 2,5 m, thấy từ thắt lưng lên và có chiều sâu bối cảnh. Có thể đổi trang phục giữa ba option ảnh; sau khi người dùng chọn ảnh, prompt video không được mô tả hoặc thay đổi trang phục nữa.
 
 ## Khóa prompt video
 
-Chỉ mô tả chuyển động nhẹ và lời thoại. Dùng cấu trúc:
+Chỉ mô tả chuyển động nhẹ và lời thoại, khóa chặt chất giọng nữ trẻ trung tiếng Việt. Dùng cấu trúc:
 
-`Vertical 9:16 commercial video with native speech audio. The female presenter strictly preserving 100% of her identical face, hairstyle, clothing and holding the exact same product from reference image 1 with zero distortion or morphing. She speaks directly to the camera in natural Vietnamese: "{vietnamese_dialogue}" with realistic lip-sync mouth movements, subtle natural breathing, gentle head nods, maintaining the product steady in her hands without changing its appearance or label. Ultra-realistic 4k commercial lighting.`
+`Vertical 9:16 commercial video with native speech audio. The female presenter strictly preserving 100% of her identical face, hairstyle, clothing and holding the exact same product from reference image 1 with zero distortion or morphing. She speaks directly to the camera in a warm, cheerful, friendly young Vietnamese female voice in natural fluent Vietnamese: "{vietnamese_dialogue}" with realistic lip-sync mouth movements, subtle natural breathing, gentle head nods, maintaining the product steady in her hands without changing its appearance or label. Ultra-realistic 4k commercial lighting.`
 
-Không thêm mô tả khuôn mặt, tóc, quần áo hay chi tiết sản phẩm mới vào prompt video. Tránh lia máy nhanh và cử động tay mạnh.
+## Quy trình QC bắt buộc trước khi bàn giao
+
+1. **Duyệt ảnh**: Gửi ảnh 3 Option sang Telegram, CHỜ người dùng xác nhận ưng ý và chọn Option cụ thể. Tuyệt đối không tự ý render video khi người dùng chưa duyệt ưng ảnh.
+2. **QC Video trước khi gửi**: Sau khi ghép xong video, Agent phải trực tiếp xem lại video: kiểm tra cử động, khớp khẩu hình tiếng Việt, và thẩm định âm thanh đảm bảo đúng chất giọng nữ ấm áp, chuẩn ngữ điệu, không mất tiếng. Chỉ khi Agent tự xem và ưng ý 100% mới gửi video cho người dùng.
 
 ## Hoàn tất
 

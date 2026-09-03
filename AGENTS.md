@@ -20,8 +20,10 @@ Tự động sản xuất video quảng cáo / review đồ gia dụng chuẩn *
      Luôn dùng từ khóa cố định:
      `The exact same Asian woman from reference image 1, strictly preserving 100% of her identical face, identical facial features, identical hairstyle (high bun with parted side hair strands), identical warm smile, and identical skin tone with absolutely zero modifications...`
 
-2. **Tiêu Chuẩn Ảnh Chân Thực 100% (Raw Commercial Photography)**:
+2. **Tiêu Chuẩn Ảnh Chân Thực 100% & Tuyệt Đối Không Lỗi Chân/Tay (Zero Limb & Anatomy Defects)**:
    - Ảnh tạo ra BẮT BUỘC là ảnh chụp người thật thương mại 100%, da thật tự nhiên có lỗ chân lông và vân da mềm mại, ánh sáng thực tế.
+   - **Tuyệt đối KHÔNG LỖI CHÂN, LỖI TAY**: Bàn tay phải chuẩn xác tuyệt đối 5 ngón, không thừa ngón, không thiếu ngón, không dính ngón, không biến dạng khớp hay méo mó hình thể (`perfect anatomical hands and fingers, exactly five natural fingers per hand, correct wrist and limb joints, no deformed hands, no extra fingers, no missing fingers, no fused fingers`).
+   - **Nhân vật & Sản phẩm chuẩn xác 100%**: Giữ nguyên vẹn 100% khuôn mặt mẫu chuẩn (`character_portrait.png`), sản phẩm chuẩn nhãn mác, màu sắc và tỉ lệ cầm trên tay.
    - **Góc chụp tự nhiên & Không dí sát**: Dùng góc Medium 3/4 Shot (cách 2.5m từ thắt lưng lên), tạo chiều sâu không gian xưởng/kho/phòng giặt.
    - **Tuyệt đối CẤM**: phong cách anime, hoạt hình, vẽ 3D CGI, da sáp mịn bệt như búp bê/bột (`raw authentic real-life commercial photography, realistic natural human skin texture with subtle pores, authentic optical depth of field, real studio and factory lighting, shot on 35mm DSLR lens, photorealistic, no 3D render, no CGI, no anime, no illustration, no plastic airbrushed skin`).
 
@@ -37,9 +39,9 @@ Tự động sản xuất video quảng cáo / review đồ gia dụng chuẩn *
    - Khi gọi `flow_generate_image`, truyền tham số `reference_media_ids: ["<media_id_char>", "<media_id_prod>"]`, `model: "pro"`, `aspect_ratio: "9:16"`.
    - Khi gọi `flow_generate_video`, truyền tham số `reference_media_ids: ["<approved_image_media_id>"]`, `type: "omni"`, `quality: "lite"`, `duration_seconds: 8` (hoặc `10`).
 
-5. **Lồng Thoại Tiếng Việt Trực Tiếp Trong Prompt Video**:
-   - Nhúng trực tiếp câu thoại tiếng Việt vào prompt của Omni Flash:
-     `...speaks directly to the camera in natural Vietnamese: "{vietnamese_dialogue}" with realistic lip-sync mouth movements...`
+5. **Lồng Thoại Tiếng Việt Trực Tiếp & Khóa Chuẩn Giọng Nữ Trẻ Trung**:
+   - Nhúng trực tiếp câu thoại tiếng Việt vào prompt của Omni Flash, kèm mô tả âm sắc chuẩn xác tránh bị đổi giọng:
+     `...speaks directly to the camera in a warm, cheerful, friendly young Vietnamese female voice in natural fluent Vietnamese: "{vietnamese_dialogue}" with realistic lip-sync mouth movements...`
 
 6. **Tuân Thủ Chính Sách TikTok Shop & Hạn Chế Nói Về Giá (Price Avoidance)**:
    - Đọc quy chuẩn tại `rules/tiktok_guidelines.md`.
@@ -48,14 +50,21 @@ Tự động sản xuất video quảng cáo / review đồ gia dụng chuẩn *
    - **Tập trung 100% vào**: Nỗi đau khách hàng, giải pháp tiện ích, công năng vượt trội và cảm nhận sử dụng thực tế.
    - CTA hợp lệ: `bấm ngay vào giỏ hàng góc trái màn hình để xem chi tiết và nhận ưu đãi hôm nay`.
 
-7. **Quy Trình Tương Tác 3 Bước (Interactive Agent Workflow)**:
+7. **Quy Trình Tương Tác 3 Bước & Điểm Dừng Duyệt Ảnh Bắt Buộc**:
    - **Bước 1 (Phân tích & Soạn kịch bản)**: Khi nhận ảnh sản phẩm từ người dùng, Agent phân tích tính năng, soạn kịch bản 3 cảnh (Hook ➔ Tính năng ➔ CTA) và 3 Option định hướng bối cảnh. Trình bày cho người dùng duyệt trước (KHÔNG tự ý tạo ảnh ngay).
-   - **Bước 2 (Tạo 3 Option ảnh duyệt)**: Khi người dùng duyệt, Agent upload media ID và sinh 3 ảnh mẫu 9:16:
-     - *Option 1*: Băng chuyền xưởng sản xuất hiện đại (Góc rộng sâu).
-     - *Option 2*: Kệ pallet kho hàng cao tầng (Góc rộng sâu).
-     - *Option 3*: Bàn kiểm thử / studio phòng giặt gia đình ấm cúng.
-   - **Bước 3 (Render Video & Ghép hoàn chỉnh)**: Dùng ảnh duyệt để render các phân cảnh video Omni Flash -> Ghép nối bằng FFmpeg thành video 24s-30s -> Gửi file MP4 hoàn chỉnh cho người dùng qua Telegram.
-   - **Điểm dừng bắt buộc**: Chưa duyệt kịch bản thì không tạo ảnh; chưa chọn ảnh thì không render video. Không hiển thị nút “render trực tiếp” trước khi có ảnh đã duyệt.
+   - **Bước 2 (Tạo 3 Option ảnh duyệt & CHỜ DUYỆT ƯNG Ý)**:
+     - Agent tạo 3 Option ảnh mẫu 9:16:
+       - *Option 1*: Băng chuyền xưởng sản xuất hiện đại (Góc rộng sâu).
+       - *Option 2*: Kệ pallet kho hàng cao tầng (Góc rộng sâu).
+       - *Option 3*: Bàn kiểm thử / studio phòng giặt gia đình ấm cúng.
+     - **ĐIỂM DỪNG BẮT BUỘC**: Gửi 3 ảnh Option sang Telegram cho người dùng xem lại. **BẮT BUỘC CHỜ NGƯỜI DÙNG XEM LẠI ẢNH, XÁC NHẬN ƯNG RỒI VÀ CHỌN OPTION** thì mới được chuyển sang tạo video. Tuyệt đối KHÔNG tự ý tạo video khi người dùng chưa ưng ảnh!
+   - **Bước 3 (Render Video, Tự Kiểm Tra QC & Ghép Hoàn Chỉnh)**: Dùng ảnh đã được người dùng duyệt ưng ý để render các phân cảnh video Omni Flash.
+     - **BẮT BUỘC TỰ XEM LẠI VIDEO TRƯỚC KHI GỬI (Self-QC Video)**: Agent phải mở và kiểm tra trực tiếp video vừa tạo:
+       - Kiểm tra hình ảnh: Nhân vật và sản phẩm không bị méo mó hình thể, tay cầm chuẩn.
+       - Kiểm tra chuyển động & khẩu hình: Nhép môi tự nhiên, khớp khẩu hình tiếng Việt.
+       - Kiểm tra âm thanh: Đúng giọng nữ trẻ trung, ấm áp, rõ ràng, không bị sai giọng (giọng nam/robot), không bị mất tiếng hay ngắt quãng.
+       - Chỉ khi xem lại và thấy **HOÀN TOÀN ƯNG Ý, ĐẠT CHUẨN 100%** thì mới gửi video cho người dùng. Nếu chưa ưng ý hoặc phát hiện lỗi, Agent phải chủ động tự sửa lại ngay.
+     - Ghép nối bằng FFmpeg thành video hoàn chỉnh -> Gửi file MP4 hoàn chỉnh cho người dùng qua Telegram.
    - Mỗi job phải thuộc riêng một `chat_id`, có ID không nhập nhằng và trạng thái được lưu bền vững để tiếp tục sau khi bot khởi động lại. Không xóa input/output của job khác.
 
 8. **Tự Chủ & Tư Duy Sáng Tạo Đổi Mới Của AI Agent (Dynamic Tailoring - Không Hardcode)**:
@@ -63,10 +72,10 @@ Tự động sản xuất video quảng cáo / review đồ gia dụng chuẩn *
    - Luôn đa dạng hóa phong cách Hook (đánh trúng nỗi đau, review đời sống, trải nghiệm mở hộp, quà tặng gia đình...), câu từ tự nhiên, giàu năng lượng và đổi mới liên tục.
    - Mọi khâu bóc tách và thiết kế Prompt đều do AI Agent trực tiếp tư duy dựa trên các file quy chuẩn trong repo (`rules/`, `prompts/`, `skills/`). Tuyệt đối không gọi API bên ngoài trong runtime.
 
-9. **AI Agent Đảm Nhiệm Toàn Diện & Trực Tiếp Giám Sát (End-to-End Direct Monitoring - Không Dựa Dẫm Vào Script)**:
-   - **Agent làm chủ toàn bộ vòng đời sản xuất (Full Lifecycle Ownership)**: AI Agent trực tiếp tiếp nhận yêu cầu, điều phối MCP tools (`flow-provider`, FFmpeg, Telegram, v.v.), chủ động kiểm tra (poll/monitor) tiến độ render của từng task ảnh/video và xử lý lỗi phát sinh theo thời gian thực mà không ỷ lại hay dựa dẫm vào các script tự động hóa cứng nhắc bên ngoài.
-   - **Trực tiếp kiểm soát chất lượng & phản hồi**: Agent theo dõi sát sao từng giai đoạn, đánh giá kết quả trả về của từng cảnh, tự động tái tạo (retry/refine) nếu xảy ra lỗi hoặc chất lượng không đạt chuẩn trước khi xuất bản video cuối cùng.
-   - Agent phải mở và kiểm tra trực quan từng ảnh Option, từng cảnh video và file ghép cuối. Chỉ kiểm tra HTTP/status hoặc file tồn tại là chưa đủ QC.
+9. **AI Agent Đảm Nhiệm Toàn Diện & Trực Tiếp Giám Sát (End-to-End Direct Monitoring & Visual QC)**:
+   - **Agent làm chủ toàn bộ vòng đời sản xuất (Full Lifecycle Ownership)**: AI Agent trực tiếp tiếp nhận yêu cầu, điều phối MCP tools (`flow-provider`, FFmpeg, Telegram, v.v.), chủ động kiểm tra (poll/monitor) tiến độ render của từng task ảnh/video và xử lý lỗi phát sinh theo thời gian thực.
+   - **Trực tiếp kiểm soát chất lượng & phản hồi**: Agent theo dõi sát sao từng giai đoạn, mở và đánh giá trực quan từng ảnh Option (soi kỹ mặt, tay 5 ngón, chân, nhãn sản phẩm), từng cảnh video và file ghép cuối trước khi xuất bản.
+   - Retry tối đa 2 lần cho mỗi ảnh/cảnh nếu xảy ra lỗi. Nếu vẫn không đạt, báo rõ tiêu chí thất bại và chờ người dùng quyết định.
    - Retry tối đa 2 lần cho mỗi ảnh/cảnh. Nếu vẫn không đạt, giữ manifest, báo rõ tiêu chí thất bại và chờ người dùng quyết định; không retry vô hạn.
    - Manifest mỗi job phải lưu input, phân tích vision, nội dung đã duyệt, media ID, workflow ID theo từng cảnh, số lần retry và đường dẫn output.
 
