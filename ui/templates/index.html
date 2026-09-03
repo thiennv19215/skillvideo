@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gia Dụng Studio | TikTok Shop AI Creator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                        <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <h2>Gia Dụng Studio</h2>
+                    <span class="badge-tag">TikTok Shop 9:16</span>
+                </div>
+            </div>
+
+            <!-- Active Model Card in Sidebar -->
+            <div class="character-mini-card" id="sidebarCharCard">
+                <div class="char-avatar-wrap">
+                    <img id="sidebarCharImg" src="/media/models/character_portrait.png" alt="Nhân vật mẫu" onerror="this.src='/static/img/placeholder_avatar.png'">
+                    <span class="status-dot online"></span>
+                </div>
+                <div class="char-details">
+                    <div class="char-role">Nhân vật mẫu cố định</div>
+                    <div class="char-name" id="sidebarCharName">Đồng nhất 100%</div>
+                </div>
+            </div>
+
+            <nav class="nav-menu">
+                <button class="nav-btn active" data-tab="tab-character">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Quản Lý Nhân Vật</span>
+                </button>
+                <button class="nav-btn" data-tab="tab-product-upload">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                    <span>Tải Sản Phẩm Mới</span>
+                </button>
+                <button class="nav-btn" data-tab="tab-products-list">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    <span>Kho Sản Phẩm (<span id="countProductsNav">0</span>)</span>
+                </button>
+                <button class="nav-btn" data-tab="tab-outputs">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                    <span>Kho Video & Ảnh Duyệt</span>
+                </button>
+                <button class="nav-btn" data-tab="tab-guidelines">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    <span>Quy Chuẩn AI Agent</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="sys-badge">
+                    <span class="pulse-indicator"></span>
+                    <span>AI Agent: Sẵn sàng</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header Bar -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 id="pageTitle">Quản Lý Nhân Vật Mẫu</h1>
+                    <p class="subtitle" id="pageSubtitle">Đảm bảo tính đồng nhất 100% gương mặt và thần thái nhân vật qua mọi video</p>
+                </div>
+                <div class="header-right">
+                    <div class="stat-pill">
+                        <span class="label">Sản phẩm:</span>
+                        <strong id="statProdCount">0</strong>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="label">Video hoàn thành:</span>
+                        <strong id="statVideoCount">0</strong>
+                    </div>
+                    <button class="btn btn-secondary btn-icon" id="btnRefresh" title="Làm mới dữ liệu">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="23 4 23 10 17 10"></polyline>
+                            <polyline points="1 20 1 14 7 14"></polyline>
+                            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            <!-- TAB 1: Character Management -->
+            <section class="tab-pane active" id="tab-character">
+                <div class="grid-2col">
+                    <!-- Active Character Portrait Card -->
+                    <div class="glass-card main-portrait-card">
+                        <div class="card-header">
+                            <div class="header-title">
+                                <h3>Chân Dung Mẫu Đang Hoạt Động</h3>
+                                <span class="badge success">Đang sử dụng cho Omni Flash</span>
+                            </div>
+                        </div>
+                        <div class="portrait-display-wrap">
+                            <div class="portrait-preview-container">
+                                <img id="activePortraitImg" src="/media/models/character_portrait.png" alt="Ảnh chân dung mẫu chuẩn">
+                                <div class="portrait-overlay">
+                                    <div class="tag-floating">Tỉ lệ 9:16 Portrait</div>
+                                    <div class="tag-face-detect">✓ Khuôn mặt chuẩn xác 100%</div>
+                                </div>
+                            </div>
+                            <div class="portrait-specs">
+                                <h4>Thông Số Khuôn Mặt Cố Định</h4>
+                                <ul class="spec-list">
+                                    <li><strong>Độ tuổi/Diện mạo:</strong> Nữ Á Đông 25-27 tuổi, ngũ quan thanh tú, nụ cười tươi tắn</li>
+                                    <li><strong>Kiểu tóc:</strong> Búi cao thanh lịch có lọn mái rẽ ngôi 2 bên</li>
+                                    <li><strong>Làn da:</strong> Trắng sáng tự nhiên, chân thực không sáp mịn ảo</li>
+                                    <li><strong>File đích:</strong> <code>models/images/character_portrait.png</code></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upload New Character Card -->
+                    <div class="glass-card">
+                        <div class="card-header">
+                            <div class="header-title">
+                                <h3>Thay Đổi / Cập Nhật Nhân Vật Mẫu</h3>
+                                <p class="desc">Tải ảnh chân dung rõ nét khuôn mặt, ánh sáng tốt, tỉ lệ dọc 9:16 hoặc 3:4</p>
+                            </div>
+                        </div>
+
+                        <form id="charUploadForm" class="upload-form">
+                            <div class="drop-zone" id="charDropZone">
+                                <input type="file" id="charFileInput" accept="image/png,image/jpeg,image/webp" hidden>
+                                <div class="drop-zone-content">
+                                    <div class="drop-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                            <polyline points="17 8 12 3 7 8"></polyline>
+                                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                                        </svg>
+                                    </div>
+                                    <h4>Kéo thả ảnh chân dung vào đây</h4>
+                                    <p>hoặc <span class="highlight">Bấm để chọn file ảnh</span></p>
+                                    <span class="file-hint">Hỗ trợ PNG, JPG, WEBP (Khuyên dùng ảnh độ phân giải cao)</span>
+                                </div>
+                                <div class="drop-preview hidden" id="charFilePreview">
+                                    <img id="charTempImg" src="" alt="Xem trước">
+                                    <span class="file-name" id="charFileName"></span>
+                                    <button type="button" class="btn-remove" id="btnRemoveCharFile">×</button>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="chkSetDefaultChar" checked>
+                                    <span class="checkmark"></span>
+                                    <span>Đặt làm nhân vật mặc định ngay sau khi tải lên</span>
+                                </label>
+                                <button type="submit" class="btn btn-primary" id="btnUploadChar" disabled>
+                                    <span>Lưu Nhân Vật Mẫu</span>
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Character Gallery History -->
+                        <div class="sub-section">
+                            <h4>Lịch Sử Ảnh Mẫu Đã Tải</h4>
+                            <div class="char-history-grid" id="charHistoryGrid">
+                                <div class="loading-spinner">Đang tải...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 2: Upload Product -->
+            <section class="tab-pane" id="tab-product-upload">
+                <div class="glass-card form-card-wide">
+                    <div class="card-header">
+                        <div class="header-title">
+                            <h3>Nhập Dữ Liệu Sản Phẩm Mới</h3>
+                            <p class="desc">Cung cấp hình ảnh và đặc tính sản phẩm để AI Agent phân tích và tạo kịch bản chuyên biệt</p>
+                        </div>
+                    </div>
+
+                    <form id="productForm" class="grid-form">
+                        <!-- Left column: Product Images Upload -->
+                        <div class="form-col-images">
+                            <label class="form-label">
+                                <strong>Ảnh Sản Phẩm (Bắt buộc)</strong>
+                                <span class="hint">Ảnh sản phẩm chụp rõ nét, trên nền trắng hoặc bối cảnh thực</span>
+                            </label>
+                            
+                            <div class="drop-zone multi-drop" id="prodDropZone">
+                                <input type="file" id="prodFilesInput" accept="image/png,image/jpeg,image/webp" multiple hidden>
+                                <div class="drop-zone-content">
+                                    <div class="drop-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                            <polyline points="21 15 16 10 5 21"></polyline>
+                                        </svg>
+                                    </div>
+                                    <h4>Kéo thả nhiều ảnh sản phẩm vào đây</h4>
+                                    <p>hoặc <span class="highlight">Bấm để tải từ máy</span></p>
+                                    <span class="file-hint">Có thể chọn nhiều góc chụp hoặc ảnh bao bì</span>
+                                </div>
+                            </div>
+
+                            <div class="prod-images-preview-grid" id="prodPreviewGrid"></div>
+                        </div>
+
+                        <!-- Right column: Details Form -->
+                        <div class="form-col-details">
+                            <div class="form-group">
+                                <label for="prodName" class="form-label">Tên Sản Phẩm *</label>
+                                <input type="text" id="prodName" class="form-control" placeholder="Ví dụ: Vỉ Dao Cạo Râu Gillette Vector Plus 1 Cán 4 Đầu Dao" required>
+                            </div>
+
+                            <div class="form-row-2">
+                                <div class="form-group">
+                                    <label for="prodCategory" class="form-label">Danh Mục</label>
+                                    <select id="prodCategory" class="form-control">
+                                        <option value="Đồ gia dụng & Nhà cửa">Đồ gia dụng & Nhà cửa</option>
+                                        <option value="Chăm sóc cá nhân & Làm đẹp">Chăm sóc cá nhân & Làm đẹp</option>
+                                        <option value="Thiết bị nhà bếp">Thiết bị nhà bếp</option>
+                                        <option value="Dụng cụ vệ sinh & Tiện ích">Dụng cụ vệ sinh & Tiện ích</option>
+                                        <option value="Khác">Khác</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="prodScale" class="form-label">Tỉ Lệ Kích Thước Đời Thực</label>
+                                    <input type="text" id="prodScale" class="form-control" placeholder="Ví dụ: Dài ~12cm cầm vừa vặn trong lòng bàn tay">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="prodFeatures" class="form-label">Công Năng Vượt Trội (Mỗi dòng 1 ý)</label>
+                                <textarea id="prodFeatures" class="form-control" rows="3" placeholder="- 2 lưỡi dao kép sắc bén cạo sạch lướt êm&#10;- Đầu xoay tự điều chỉnh theo góc cạnh khuôn mặt&#10;- Dải bôi trơn dưa leo làm dịu mát da"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="prodPainPoints" class="form-label">Nỗi Đau / Vấn Đề Khách Hàng Giải Quyết</label>
+                                <textarea id="prodPainPoints" class="form-control" rows="2" placeholder="- Dao cạo thông thường gây rát, xước da, nhanh cùn&#10;- Mua lẻ từng đầu dao ngoài tiệm rất tốn kém"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="prodAudience" class="form-label">Đối Tượng Nhắm Tới</label>
+                                <input type="text" id="prodAudience" class="form-control" placeholder="Ví dụ: Nam giới, người hay cạo râu hàng ngày, gia đình">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="prodNotes" class="form-label">Ghi Chú Kịch Bản / Yêu Cầu Riêng (Tuỳ chọn)</label>
+                                <input type="text" id="prodNotes" class="form-control" placeholder="Ví dụ: Phong cách kho xưởng năng động, vui tươi">
+                            </div>
+
+                            <div class="form-actions-bottom">
+                                <button type="reset" class="btn btn-secondary" id="btnResetProdForm">Làm Lại</button>
+                                <button type="submit" class="btn btn-primary btn-lg" id="btnSubmitProd">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                                        <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                                        <polyline points="7 3 7 8 15 8"></polyline>
+                                    </svg>
+                                    <span>Lưu Sản Phẩm Vào Hệ Thống</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- TAB 3: Products Catalog -->
+            <section class="tab-pane" id="tab-products-list">
+                <div class="section-header-wrap">
+                    <h3>Danh Sách Sản Phẩm Đã Lưu</h3>
+                    <div class="search-box">
+                        <input type="text" id="searchProdInput" placeholder="Tìm kiếm sản phẩm...">
+                    </div>
+                </div>
+
+                <div class="products-grid" id="productsCatalogGrid">
+                    <div class="loading-spinner">Đang tải danh sách sản phẩm...</div>
+                </div>
+            </section>
+
+            <!-- TAB 4: Outputs Gallery (Videos & Approved Images) -->
+            <section class="tab-pane" id="tab-outputs">
+                <div class="outputs-layout">
+                    <div class="outputs-subnav">
+                        <button class="subtab-btn active" data-subtab="sub-videos">
+                            <span>Video Đã Render</span>
+                            <span class="pill-count" id="countVideosPill">0</span>
+                        </button>
+                        <button class="subtab-btn" data-subtab="sub-images">
+                            <span>Ảnh Duyệt 9:16</span>
+                            <span class="pill-count" id="countImagesPill">0</span>
+                        </button>
+                    </div>
+
+                    <div class="subtab-content active" id="sub-videos">
+                        <div class="videos-grid" id="videosGalleryGrid">
+                            <div class="empty-state">Chưa có video nào được render.</div>
+                        </div>
+                    </div>
+
+                    <div class="subtab-content" id="sub-images">
+                        <div class="images-grid" id="imagesGalleryGrid">
+                            <div class="empty-state">Chưa có ảnh duyệt nào được lưu.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 5: AI Guidelines & Policy Reference -->
+            <section class="tab-pane" id="tab-guidelines">
+                <div class="glass-card rules-card">
+                    <h3>Quy Chuẩn AI Agent & Chính Sách TikTok Shop</h3>
+                    <div class="rules-content">
+                        <div class="rule-box green">
+                            <h4>✓ 9 Quy Tắc Cốt Lõi AI Agent</h4>
+                            <ul>
+                                <li><strong>1. Đồng Nhất Nhân Vật 100%:</strong> Giữ nguyên khuôn mặt, tóc búi có lọn mái và nụ cười ấm áp từ <code>models/images/character_portrait.png</code>.</li>
+                                <li><strong>2. Ảnh Chân Thực Thương Mại:</strong> Da thật có lỗ chân lông, ánh sáng thực tế. Cấm phong cách vẽ 3D CGI hay hoạt hình da sáp.</li>
+                                <li><strong>3. Chuẩn Tỉ Lệ Đời Thực:</strong> Sản phẩm trên tay cầm vừa vặn đúng kích thước thật.</li>
+                                <li><strong>4. Flow Provider MCP:</strong> Upload lấy media_id trước khi sinh ảnh hoặc video Omni Flash.</li>
+                                <li><strong>5. Lồng Thoại Tiếng Việt:</strong> Nhúng trực tiếp câu thoại vào prompt với khẩu hình nhép môi chân thực.</li>
+                                <li><strong>6. Tránh Nói Về Giá & Từ Cấm:</strong> Không nhắc tiền cụ thể, tập trung vào công năng, giải pháp và cảm nhận sử dụng.</li>
+                                <li><strong>7. Quy Trình 3 Bước:</strong> Kịch bản ➔ 3 Option ảnh duyệt ➔ Render video ghép hoàn chỉnh.</li>
+                                <li><strong>8. Sáng Tạo Cá Nhân Hóa:</strong> Không dập khuôn kịch bản, đổi mới liên tục theo từng sản phẩm.</li>
+                                <li><strong>9. Agent Làm Chủ Toàn Diện:</strong> Tự động điều phối tools, theo dõi trực tiếp tiến độ render thời gian thực, không dựa dẫm script cứng nhắc.</li>
+                            </ul>
+                        </div>
+
+                        <div class="rule-box yellow">
+                            <h4>⚠️ Từ Cấm & Lưu Ý TikTok Shop</h4>
+                            <p><strong>Cấm tuyệt đối:</strong> <em>số 1, tốt nhất, rẻ nhất, cam kết 100%, vĩnh viễn, khỏi hoàn toàn</em>.</p>
+                            <p><strong>Câu Kêu Gọi CTA Hợp Lệ:</strong> <em>"Bấm ngay vào giỏ hàng góc trái màn hình để xem chi tiết và nhận ưu đãi hôm nay."</em></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "three_scene_workflow": {
+    "scene_1_hook": {
+      "name": "Cảnh 1: Hook Mở Đầu",
+      "duration_seconds": 10,
+      "aspect_ratio": "9:16",
+      "prompt_template": "Vertical 9:16 commercial video with native speech audio. The female presenter in reference image holding {product_name} speaks directly and enthusiastically to the camera in natural Vietnamese: \"{scene_1_vietnamese_dialogue}\". Clear audible natural Vietnamese speaking voice, realistic lip-sync mouth movements matching the Vietnamese words, smiling warmly in {scene_environment}. Ultra-realistic 4k commercial lighting."
+    },
+    "scene_2_features": {
+      "name": "Cảnh 2: Tính Năng & Công Năng Thực Tế",
+      "duration_seconds": 10,
+      "aspect_ratio": "9:16",
+      "prompt_template": "Vertical 9:16 commercial video with native speech audio. The female presenter in reference image holding {product_name} points gently to product features and speaks clearly to the camera in natural Vietnamese: \"{scene_2_vietnamese_dialogue}\". Clear audible natural Vietnamese speaking voice, accurate lip-sync and expressive mouth movements matching the Vietnamese words, confident and friendly in {scene_environment}. 4k commercial quality."
+    },
+    "scene_3_cta": {
+      "name": "Cảnh 3: Trải Nghiệm & Kêu Gọi Mua (CTA)",
+      "duration_seconds": 10,
+      "aspect_ratio": "9:16",
+      "prompt_template": "Vertical 9:16 commercial video with native speech audio. The female presenter in reference image holding {product_name} smiles brightly, gestures invitingly toward the bottom-left corner of the screen, and speaks directly in natural Vietnamese: \"{scene_3_vietnamese_dialogue}\". Clear audible natural Vietnamese voice, lively lip-sync matching the Vietnamese words, highly engaging commercial video."
+    }
+  }
+}

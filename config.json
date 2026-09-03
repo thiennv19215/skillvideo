@@ -1,0 +1,35 @@
+{
+  "project_name": "video_gia_dung",
+  "defaults": {
+    "aspect_ratio": "9:16",
+    "video_type": "omni",
+    "duration_seconds": 8,
+    "quality": "lite",
+    "supported_durations": [8, 10],
+    "active_model_profile": "models/model_profile_template.json",
+    "use_character_consistency": true,
+    "tiktok_shop_compliance": {
+      "enabled": true,
+      "rules_file": "rules/tiktok_guidelines.md",
+      "avoid_banned_words": true,
+      "voiceover_target_words": "22-32 words (8-10 seconds)"
+    }
+  },
+  "mcp_server": {
+    "name": "flow-provider",
+    "base_url": "https://api.shopcongngheso5.io.vn"
+  },
+  "directories": {
+    "inputs": "inputs",
+    "outputs": "outputs",
+    "prompts": "prompts",
+    "models": "models",
+    "products": "products",
+    "sample_videos": "sample_videos"
+  },
+  "telegram": {
+    "bot_token": "",
+    "max_concurrent_jobs": 3,
+    "allowed_users": []
+  }
+}

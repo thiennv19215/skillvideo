@@ -1,0 +1,6 @@
+interface:
+  display_name: "Video Gia Dụng TikTok Shop"
+  short_description: "Tạo video gia dụng từ ảnh đến MP4"
+  default_prompt: "Dùng $video-gia-dung để phân tích ảnh sản phẩm và thực hiện quy trình duyệt video TikTok Shop."
+policy:
+  allow_implicit_invocation: true

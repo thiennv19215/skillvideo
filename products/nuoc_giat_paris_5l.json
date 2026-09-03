@@ -1,0 +1,25 @@
+{
+  "product_id": "nuoc_giat_paris_5l",
+  "product_name": "Combo 2 Can Nước Giặt Xả Paris Luxury Perfume 5in1 (10 Lít)",
+  "category": "Đồ gia dụng & Nhà cửa",
+  "scale_description": "Can 5000ml (5L) có quai xách chắc chắn, cao khoảng 32cm, đặt gọn gàng cạnh máy giặt hoặc xách bằng 1 tay",
+  "key_features": [
+    "Công nghệ giặt xả 2 trong 1 siêu sạch, đánh bay mọi vết bẩn cứng đầu",
+    "Hương nước hoa Pháp Paris Luxury Perfume lưu hương thơm ngát gấp 3 lần suốt cả ngày",
+    "Công thức kháng khuẩn 99.9%, giữ màu quần áo bền đẹp và mềm mại sợi vải",
+    "Dùng an toàn cho cả giặt máy cửa trên, cửa trước và giặt tay không hại da"
+  ],
+  "pain_points": [
+    "Giặt xà phòng thông thường nhanh phai màu áo quần, mùi hôi ẩm mốc vào ngày mưa",
+    "Phải tốn tiền mua riêng nước giặt và nước xả vải đắt đỏ"
+  ],
+  "target_audience": "Chị em nội trợ, gia đình, người chăm sóc nhà cửa",
+  "created_at": "2026-09-02 15:28:00",
+  "images": [
+    {
+      "filename": "product_image_1.jpg",
+      "path": "inputs/products/nuoc_giat_paris_5l/product_image_1.jpg"
+    }
+  ],
+  "primary_image": "inputs/products/nuoc_giat_paris_5l/product_image_1.jpg"
+}

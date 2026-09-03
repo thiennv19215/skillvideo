@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+env/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# User inputs and generated outputs
+inputs/**
+!inputs/.gitkeep
+outputs/**
+!outputs/.gitkeep
+sample_videos/*.mp4
+sample_videos/*.mov
+sample_videos/*.webm
+sample_videos/frames/
+sample_videos/extracted_frames/
+
+# Keep only the canonical character reference
+models/images/*
+!models/images/.gitkeep
+!models/images/character_portrait.png
+
+.DS_Store
+Thumbs.db

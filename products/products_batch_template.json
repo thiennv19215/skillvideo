@@ -1,0 +1,26 @@
+{
+  "batch_name": "dot_tao_video_do_gia_dung_01",
+  "products": [
+    {
+      "product_id": "noi_chien_khong_dau_01",
+      "product_name": "Nồi chiên không dầu 6.5L",
+      "duration_seconds": 8,
+      "primary_image": "inputs/noi_chien.jpg",
+      "custom_prompt": "Vertical 9:16 commercial video of a luxury air fryer on a kitchen marble counter, smooth zoom in to touch screen, glowing heating element inside with sizzling chicken, cinematic lighting."
+    },
+    {
+      "product_id": "may_hut_bui_cam_tay_02",
+      "product_name": "Máy hút bụi không dây cầm tay",
+      "duration_seconds": 10,
+      "primary_image": "inputs/may_hut_bui.jpg",
+      "custom_prompt": "Vertical 9:16 dynamic video of sleek cordless vacuum cleaner gliding smoothly across a hardwood floor, LED brush head illuminating dust particles being sucked away effortlessly, modern bright living room."
+    },
+    {
+      "product_id": "may_ep_cham_03",
+      "product_name": "Máy ép chậm trái cây nguyên quả",
+      "duration_seconds": 8,
+      "primary_image": "inputs/may_ep_cham.jpg",
+      "custom_prompt": "Vertical 9:16 macro commercial shot of fresh orange and celery being slowly pressed inside a modern slow juicer, pure vibrant juice pouring smoothly into a glass cup with fine droplets, refreshing atmosphere."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "learned_background_styles": [
+    {
+      "id": "style_1_twin_conveyors_stainless_table",
+      "name": "Bối cảnh 1: Hai dãy băng chuyền song song + Bàn inox phụ kiện tiền cảnh (Symmetrical Mega Factory)",
+      "composition": "Center symmetrical medium shot, standing between two long parallel assembly conveyor belts stretching far into the distance, workers in uniform assembling on both sides, industrial LED ceiling lights, clean epoxy floor. In foreground on a reflective stainless steel table, a neat complete lineup of the products and accessories arranged orderly.",
+      "lighting": "Bright industrial high-bay overhead LED strip lighting, clean commercial reflection on stainless steel table",
+      "camera_angle": "Medium 3/4 shot at eye level, camera distance 2.5m, balanced symmetrical framing with generous headroom",
+      "prompt_keywords": "Inside a massive clean manufacturing factory hall, standing centered between two long symmetrical production conveyor lines stretching far back with workers on both sides. In the foreground on a gleaming stainless steel workbench, a neat row of {product_name} units and accessories are meticulously arranged. Raw authentic commercial photography, 35mm lens, 9:16 vertical."
+    },
+    {
+      "id": "style_2_infinite_assembly_line",
+      "name": "Bối cảnh 2: Dây chuyền sản xuất chạy dài vô tận (Infinite Assembly Perspective)",
+      "composition": "Infinite linear perspective showing endless rows of products traveling along conveyor belts, uniform assembly workers focused on production, pristine clean high-tech manufacturing facility.",
+      "lighting": "Even soft commercial factory lighting, cool clean industrial aesthetic",
+      "camera_angle": "Eye-level medium shot, centered host with open welcoming gestures, deep linear perspective vanishing point in background",
+      "prompt_keywords": "Standing inside a high-tech modern automated assembly plant, centered between continuous long conveyor belts carrying hundreds of finished {product_name} units vanishing into the deep background. Uniformed factory staff working diligently along the line. Professional commercial lighting, realistic depth of field, 9:16 vertical."
+    },
+    {
+      "id": "style_3_curved_conveyor_highbay_warehouse",
+      "name": "Bối cảnh 3: Băng chuyền chữ S uốn lượn + Kệ pallet kho hàng cao tầng (Curved S-Conveyor in Mega Warehouse)",
+      "composition": "A curved S-shape roller conveyor belt wrapping gracefully around the host, carrying dozens of product units, with massive multi-tier high-bay pallet racking and stacked inventory cartons in the background.",
+      "lighting": "Warm ambient warehouse and factory floodlights, natural depth and spatial layering",
+      "camera_angle": "Medium three-quarter shot, energetic presentation posture, dynamic curved conveyor framing the presenter",
+      "prompt_keywords": "Standing at the center of a dynamic curved S-shaped roller conveyor system transporting rows of {product_name} around her. In the deep background, towering industrial warehouse pallet racks are packed with stacked shipping boxes. Authentic industrial warehouse environment, crisp 50mm lens focus, 9:16 vertical commercial video."
+    }
+  ]
+}

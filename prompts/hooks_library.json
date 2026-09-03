@@ -1,0 +1,29 @@
+{
+  "hooks": [
+    {
+      "id": "hook_noi_dau_trai_nghiem",
+      "style": "Giải quyết nỗi đau thực tế",
+      "text": "Bác nào đang gặp tình trạng {pain_point} khi dùng đồ thông thường thì dừng lại ba giây xem ngay giải pháp chân ái {product_name} này nha!"
+    },
+    {
+      "id": "hook_trai_nghiem_tien_ich",
+      "style": "Trải nghiệm tiện ích đời sống",
+      "text": "Từ ngày có chiếc {product_name} này trong nhà thì công việc hàng ngày tiện và nhẹ nhàng hơn hẳn luôn cả nhà ơi!"
+    },
+    {
+      "id": "hook_kham_pha_cong_nang",
+      "style": "Khám phá công năng thực tế",
+      "text": "Cùng em mở hộp và trải nghiệm thực tế chiếc {product_name} thông minh đang được rất nhiều gia đình tin dùng này nhé!"
+    },
+    {
+      "id": "hook_qua_tang_thiet_thuc",
+      "style": "Gợi ý quà tặng thiết thực",
+      "text": "Ai đang tìm kiếm một món đồ gia dụng vừa tiện lợi vừa tinh tế để chăm sóc gia đình thì xem ngay chiếc {product_name} này nha!"
+    },
+    {
+      "id": "hook_nang_cap_khong_gian",
+      "style": "Nâng cấp không gian sống",
+      "text": "Một món đồ nhỏ gọn nhưng giúp nâng tầm không gian sống cực kỳ đáng để trải nghiệm, chính là chiếc {product_name} này đây ạ!"
+    }
+  ]
+}

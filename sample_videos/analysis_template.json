@@ -1,0 +1,17 @@
+{
+  "source_video": "sample_videos/video_mau_01.mp4",
+  "target_product_id": "noi_chien_khong_dau_01",
+  "analysis": {
+    "scene_description": "Không gian bếp tối giản phong cách Bắc Âu, ánh sáng ban ngày tự nhiên, tông màu kem gỗ ấm.",
+    "camera_movement": "Góc quay trung cảnh (Medium shot) chuyển dần sang cận cảnh (Close-up) tay chạm vào màn hình sản phẩm.",
+    "character_pose": "Người mẫu đứng cạnh bàn bếp, một tay đặt cạnh sản phẩm, mỉm cười nhẹ và nhìn về phía camera.",
+    "voiceover_script": {
+      "text": "Nồi chiên không dầu thế hệ mới, chỉ một chạm là có ngay món ngon chuẩn vị!",
+      "word_count": 18,
+      "estimated_duration_seconds": 8,
+      "tone": "Hào hứng, tự nhiên, thân thiện"
+    }
+  },
+  "image_generation_prompt": "Vertical 9:16 shot. A beautiful Vietnamese female reviewer standing in a modern Nordic minimalist kitchen, gently placing her hand near a sleek luxury air fryer on the marble countertop. Natural soft morning light, friendly confident smile, looking at camera. Ultra-realistic, 4k commercial photography.",
+  "status": "waiting_user_approval_for_image"
+}

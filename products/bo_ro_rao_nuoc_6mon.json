@@ -1,0 +1,25 @@
+{
+  "product_id": "bo_ro_rao_nuoc_6mon",
+  "product_name": "Bộ Thau Rổ Kép Ráo Nước 6 Món Cao Cấp (3 Rổ + 3 Chậu)",
+  "category": "Đồ gia dụng & Thiết bị nhà bếp",
+  "scale_description": "Gồm 3 bộ thau rổ kích cỡ lớn vừa nhỏ lồng khít vào nhau (~28cm, ~24cm, ~20cm), cầm vừa vặn bằng 2 tay người phụ nữ",
+  "key_features": [
+    "Thiết kế kép 2 trong 1: Bên trong là rổ thoát nước có lỗ li ti, bên ngoài là chậu hứng nước chống tràn",
+    "Bộ 6 món gồm 3 cặp kích cỡ khác nhau, xếp lồng khít vào nhau siêu gọn gàng",
+    "Phối màu cao cấp xanh navy và vàng tươi sang trọng",
+    "Chất liệu nhựa PP dày dặn, an toàn thực phẩm, rửa rau củ quả hay thịt cá ráo nước tức thì"
+  ],
+  "pain_points": [
+    "Rửa rau bằng rổ thường nước chảy lênh láng ra bàn bếp và sàn nhà",
+    "Dùng nhiều rổ chậu lỉnh kỉnh chiếm hết diện tích gian bếp chật hẹp"
+  ],
+  "target_audience": "Người nội trợ, gia đình, người thích nấu nướng gọn gàng",
+  "created_at": "2026-09-02 15:57:00",
+  "images": [
+    {
+      "filename": "product_image_1.jpg",
+      "path": "inputs/products/bo_ro_rao_nuoc_6mon/product_image_1.jpg"
+    }
+  ],
+  "primary_image": "inputs/products/bo_ro_rao_nuoc_6mon/product_image_1.jpg"
+}

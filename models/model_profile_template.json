@@ -1,0 +1,16 @@
+{
+  "model_id": "model_vietnamese_female_01",
+  "name": "Mẫu Nữ Reviewer Hiện Đại",
+  "description": "Người mẫu nữ châu Á / Việt Nam, độ tuổi 24-28, phong cách hiện đại, thanh lịch, thân thiện, trang phục nội trợ / smart-casual phù hợp không gian bếp hoặc phòng khách hiện đại.",
+  "attributes": {
+    "gender": "female",
+    "age_range": "24-28",
+    "ethnicity": "asian / vietnamese",
+    "style": "clean, elegant, friendly, modern lifestyle",
+    "clothing": "minimalist home wear / chic apron / casual smart top"
+  },
+  "reference_images": [
+    "models/images/sample_model_face.jpg"
+  ],
+  "prompt_injection": "A beautiful 25yo Vietnamese female reviewer with friendly smile, neat hair, wearing modern minimalist home clothing"
+}

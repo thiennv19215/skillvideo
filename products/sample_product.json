@@ -1,0 +1,30 @@
+{
+  "product_id": "noi_chien_khong_dau_01",
+  "product_name": "Nồi chiên không dầu điện tử cao cấp 6.5L",
+  "category": "Nhà bếp",
+  "brand": "SmartHome Pro",
+  "key_features": [
+    "Màn hình cảm ứng OLED hiển thị sắc nét",
+    "Cửa kính trong suốt nhìn rõ thức ăn bên trong",
+    "Vỏ kim loại phay xước màu xám titan sang trọng",
+    "Công nghệ nướng đối lưu 360 độ"
+  ],
+  "video_settings": {
+    "aspect_ratio": "9:16",
+    "duration_seconds": 8,
+    "quality": "lite",
+    "video_type": "omni"
+  },
+  "scene_setting": {
+    "environment": "Modern luxury minimalist kitchen with marble countertop, warm ambient lighting, clean background",
+    "action": "Camera smooth zoom-in on the digital touchscreen being tapped, followed by soft glow inside showing juicy roasted chicken crisping up perfectly. Steam gently venting.",
+    "model_id": "model_vietnamese_female_01"
+  },
+  "images": {
+    "primary_image": "inputs/noi_chien_goc_chinh.jpg",
+    "reference_images": [
+      "inputs/noi_chien_chi_tiet.jpg"
+    ]
+  },
+  "custom_prompt": "Vertical 9:16 commercial video. High-end modern air fryer on a sleek luxury kitchen marble countertop. Close-up of hands tapping the sleek digital touch panel, warm light illuminates interior showing sizzling golden chicken. Ultra-realistic, cinematic lighting, 4k advertising look."
+}
